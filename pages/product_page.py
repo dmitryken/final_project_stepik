@@ -14,3 +14,11 @@ class ProductPage(BasePage):
     def should_be_correct_book_price(self):
         assert self.is_element_present(*ProductPageLocators.BOOK_PRICE) == \
                self.is_element_present(*ProductPageLocators.ADDED_BOOK_PRICE), "Another book's price"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def success_message_should_be_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented after adding in card, but should be disappeared"
