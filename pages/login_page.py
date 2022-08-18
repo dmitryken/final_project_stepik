@@ -1,6 +1,7 @@
+import time
 from .base_page import BasePage
 from .locators import LoginPageLocators
-import time
+
 
 class LoginPage(BasePage):
     def should_be_login_page(self):
@@ -25,3 +26,4 @@ class LoginPage(BasePage):
         self.browser.find_element(*LoginPageLocators.PASS_NAME_FIELD).send_keys(password)
         self.browser.find_element(*LoginPageLocators.CONFIRM_PASS_FIELD).send_keys(password)
         self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON).click()
+
